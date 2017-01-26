@@ -1,0 +1,270 @@
+/*
+	Variables
+*/
+
+$grey-color: #a7a9ac;
+$blue-font: #0266b3;
+$question-background: #dff3fd;
+$comment-secton-padding-bottom: 0.6em;
+$comment-section-border: 10px solid white;
+
+/*
+	Mixins
+*/
+
+@mixin display-flex {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display:         flex;
+}
+
+@mixin box-shadow ($horizontalLen) {
+	-webkit-box-shadow: $horizontalLen 0px 8px -2px rgba(203,205,207,1);
+	-moz-box-shadow: $horizontalLen 0px 8px -2px rgba(203,205,207,1);
+	box-shadow: $horizontalLen 0px 8px -2px rgba(203,205,207,1);
+}
+
+@mixin column-bottom {
+	@include display-flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+
+@mixin dot($color) {
+	content: '\25CF';
+	font-size: 20px;
+	position: absolute;
+	bottom: -12px;
+	color: $color;
+}
+
+@mixin line($color) {
+	margin-bottom: 0.6em;
+	width: 100%;
+	margin-top: 50px;
+	border-color: $color;
+}
+
+/*
+	General purpose classes
+*/
+
+.display-flex {
+	@include display-flex;
+}
+
+/*
+	Main structure
+*/
+
+#home {
+	header {
+		background-color: #ffffff;
+		padding-top: 20px;
+		padding-bottom: 20px;
+
+		#title {
+			@include display-flex;
+			align-items: center;
+
+			span {
+				font-size: 32px;
+				font-weight: bold;
+				text-transform: uppercase;
+			}
+		}
+
+		#radioForm {
+			margin-left: auto;
+			align-self: flex-end;
+
+			label {
+				padding-left: 35px;
+				font-weight: bold;
+			}
+		}
+
+		#searchField {
+			background-color: #fbfbfb;
+			border-color: #eeeeee;
+			margin-top: 15px;
+		}
+
+		#searchButtonCol {
+			font-style: italic;
+			@include column-bottom;
+
+			.row {
+				margin-left: 10px;
+			}
+
+			#recent {
+				font-style: normal;
+				text-decoration: underline;
+				font-weight: bold;
+				color: $grey-color;
+			}
+
+			#hot {
+				font-style: normal;
+				font-weight: bold;
+				color: $blue-font;
+			}
+
+			.button-block {
+				height: 34px;
+				margin-top: 15px;
+				color: $grey-color;
+				border: solid 1px $grey-color;
+				background-color: white;
+				min-width: 100%;
+				font-style: normal;
+				font-weight: bold;
+				text-transform: uppercase;
+			}
+		}
+	}
+
+	#questions {
+		background-color: #fbfbfb;
+		@include box-shadow(4px);
+
+		.question-container {
+			background-color: #ffffff;
+			@include box-shadow(2px);
+			padding-bottom: 40px;
+
+			.question-section {
+				@include display-flex;
+				background-color: $question-background;
+				padding-top: 10px;
+				padding-bottom: 20px;
+
+				.op-picture {
+					@include display-flex;
+					justify-content: center;
+				}
+
+				.op-name {
+					color: $blue-font;
+				}
+
+				.question-phrase {
+					font-size: 10px;
+					color: $grey-color;
+					text-transform: uppercase;
+				}
+
+				.question-topic {
+					color: $blue-font;
+					font-style: italic;
+					font-size: 17px;
+				}
+			}
+
+			.comment-section {
+				font-size: 10px;
+				font-weight: bold;
+
+				div.row > div {
+					padding-left: 10px;
+					padding-right: 10px;
+				}
+
+				.question-column {
+					background-color: $question-background;
+					@include column-bottom;
+					align-items: center;
+					padding-bottom: $comment-secton-padding-bottom;
+
+					span {
+						color: $grey-color;
+						text-transform: uppercase;
+					}
+
+					.line {
+						@include line($grey-color);
+					}
+				}
+
+				.more-column {
+					@include column-bottom;
+					align-items: center;
+					justify-content: space-between;
+					margin-top: 30px;
+					padding-bottom: $comment-secton-padding-bottom;
+					font-size: 1.2em;
+					border-left: $comment-section-border;
+
+					span {
+						&.num {
+							padding-top: 40px;
+						}
+
+						&.more {
+							font-style: italic;
+							text-align: center;
+						}
+					}
+
+					&:after {
+						@include dot($grey-color);
+					}
+				}
+
+				.comment-column {
+					@include column-bottom;
+					align-items: center;
+					background-color: #eeeeee;
+					color: $grey-color;
+					margin-top: 30px;
+					padding-top: 20px;
+					padding-bottom: $comment-secton-padding-bottom;
+					text-transform: uppercase;
+					border-left: $comment-section-border;
+
+					&:after {
+						@include dot(inherit);
+					}
+
+					.line {
+						@include line(inherit);
+					}
+
+					&.answered {
+						&:after {
+							@include dot(black);
+							color: black
+						}
+
+						.line {
+							@include line(black);
+						}
+					}
+				}
+			}
+
+			.question-info {
+				@include display-flex;
+				flex-direction: column;
+				justify-content: space-between;
+				padding-left: 40px;
+				margin-top: 30px;
+
+				span {
+					font-style: italic;
+				}
+			}
+		}
+
+		#load-more {
+			color: #e1173f;
+			font-weight: bold;
+			background-color: #ffffff;
+			@include box-shadow(2px);
+			padding-top: 30px;
+			padding-bottom: 35px;
+		}
+	}
+}

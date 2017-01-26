@@ -1,1 +1,118 @@
-<h1>Hello World!</h1>
+<div id="home">
+	<header>
+		<div class="container">
+			<div class="row display-flex">
+				<div class="col-md-2">
+					<input type="image" src="app/assets/img/arrow_left.png" alt="previous page" />
+				</div>
+				<div class="col-md-6">
+					<div class="row display-flex">
+						<span id="title">
+							<span>Questions&nbsp;&nbsp;</span>
+							<input type="image" src="app/assets/img/button_plus.png" alt="add question" />
+						</span>
+						<span id="radioForm">
+							<label class="radio-inline">
+								<input name="filter" value="my_shelf" type="radio" checked />
+								My shelf
+							</label>
+							<label class="radio-inline">
+								<input name="filter" value="all_questions" type="radio" />
+								All questions
+							</label>
+						</span>
+					</div>
+					<div class="row">
+						<input type="text" class="form-control" placeholder="Search questions" id="searchField" />
+					</div>
+				</div>
+				<div class="col-md-2" id="searchButtonCol">
+					<div class="row">
+						<div class="pull-right">
+							<span>Sort by:&nbsp;</span>
+							<span id="recent">recent</span>
+							<span>&nbsp;or&nbsp;</span>
+							<span id="hot">hot</span>
+						</div>
+						<button class="button-block">Search</button>
+					</div>
+				</div>
+				<div class="col-md-2"></div>
+			</div>
+		</div>
+	</header>
+
+	<div class="container" id="questions">
+		<div class="row">
+			<div class="col-md-offset-2 col-md-8 question-container">
+				<div class="row">
+					<div class="col-md-9">
+						<div class="row question-section">
+							<div class="col-md-2 op-picture">
+								<img src="app/assets/img/profile-pictures/profile_pic1.png" />
+							</div>
+							<div class="col-md-10">
+								<div>
+									<span class="op-name">Eva&nbsp;</span>
+									<span class="question-phrase">is asking:</span>
+								</div>
+								<div class="question-topic">
+									Will insulin make my patient gain weight?
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3"></div>
+				</div>
+				<div class="row display-flex">
+					<div class="col-md-9 comment-section">
+						<div class="row display-flex">
+							<div class="col-md-2 question-column">
+								<hr class="line">
+								<span>asked</span>
+							</div>
+							<div class="col-md-2 more-column">
+								<span class="num">3</span>
+								<span class="more">more activities</span>
+							</div>
+							<div class="col-md-2 comment-column">
+								<img src="app/assets/img/profile-pictures/profile_pic2.png">
+								<hr class="line">
+								<span>commented</span>
+							</div>
+							<div class="col-md-2 comment-column">
+								<img src="app/assets/img/profile-pictures/profile_pic3.png">
+								<hr class="line">
+								<span>commented</span>
+							</div>
+							<div class="col-md-2 comment-column">
+								<img src="app/assets/img/profile-pictures/profile_pic4.png">
+								<hr class="line">
+								<span>commented</span>
+							</div>
+							<div class="col-md-2 comment-column answered">
+								<img src="app/assets/img/profile-pictures/profile_pic5.png">
+								<hr class="line">
+								<span>answered</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 question-info">
+						<div>1 <span>related discussion</span></div>
+						<div>6 <span>peers involved</span></div>
+						<div>3 <span>conversations</span></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-2"></div>
+		</div>
+
+		<div class="row">
+			<div id="load-more" class="col-md-offset-2 col-md-8">
+				load more questions
+			</div>
+			<div class="col-md-2"></div>
+		</div>
+
+	</div>
+</div>
