@@ -1,0 +1,208 @@
+/*
+ Main structure
+ */
+
+#user-profile {
+	font-size: 12px;
+
+	.modal-content {
+		text-align: center;
+
+		.grey-text {
+			color: $grey-color;
+			text-transform: uppercase;
+			font-size: 10px;
+		}
+
+		.modal-header {
+
+			.close {
+				align-self: flex-end;
+			}
+
+			.modal-title {
+				color: $blue-font;
+				padding-top: 10px;
+				padding-bottom: 10px;
+			}
+
+			.profile-info {
+				text-align: center;
+
+				@media screen and (max-width: 767px) {
+					div {
+						padding-bottom: 10px;
+
+						span {
+							display: block;
+						}
+					}
+				}
+			}
+		}
+
+		.modal-body {
+
+			.all-started {
+				font-size: 30px;
+				font-style: italic;
+				@include display-flex;
+				justify-content: space-between;
+				padding-bottom: 20px;
+			}
+
+			.blue-rectangles {
+				@include display-flex;
+				justify-content: center;
+				align-items: center;
+				padding-top: 20px;
+				padding-bottom: 20px;
+
+				> span {
+					height: 85px;
+					width: 85px;
+					@include display-flex;
+					align-items: center;
+					justify-content: center;
+				}
+
+				.rect-1, .rect-2, .rect-3, .rect-4 {
+					position: relative;
+					height: 70px;
+					width: 70px;
+					@include display-flex;
+					flex-direction: column;
+					align-items: center;
+					justify-content: center;
+
+					&:before {
+						content: "";
+						background-color: #e5f5fd;
+						position: absolute;
+						width: 100%;
+						height: 100%;
+						left: 0;
+						z-index: 0;
+					}
+
+					> span {
+						display: block;
+						z-index: 1;
+					}
+
+					.num {
+						font-size: 18px;
+						font-weight: bold;
+						padding-bottom: 6px;
+					}
+
+					.text-italic {
+						font-style: italic;
+					}
+				}
+
+				.rect-1:before {
+					@include rotate-rect(50deg);
+				}
+				.rect-2:before {
+					@include rotate-rect(-10deg);
+				}
+				.rect-3:before {
+					@include rotate-rect(60deg);
+				}
+				.rect-4:before {
+					@include rotate-rect(100deg);
+				}
+
+			}
+
+			.members {
+				color: $blue-font;
+				@include display-flex;
+				justify-content: center;
+				padding-bottom: 40px;
+
+				.member {
+					@include display-flex;
+					flex-direction: column;
+					font-size: 13px;
+
+					.picture {
+						padding: 20px;
+						border: 7px solid white;
+						background: -webkit-repeating-linear-gradient(45deg, white, white 2px, #ededed 2px, #ededed 4px);
+						background: -o-repeating-linear-gradient(45deg, white, white 2px, #ededed 2px, #ededed 4px);
+						background: -moz-repeating-linear-gradient(45deg, white, white 2px, #ededed 2px, #ededed 4px);
+						background: repeating-linear-gradient(45deg, white, white 2px, #ededed 2px, #ededed 4px);
+
+						img {
+							height: 50px;
+							width: 50px;
+						}
+					}
+				}
+			}
+		}
+
+		@media screen and (min-width: 992px) {
+			.modal-footer {
+				margin-bottom: 20px;
+			}
+		}
+
+		.modal-footer {
+			background: -webkit-repeating-linear-gradient(45deg, white, white 2px, #ededed 2px, #ededed 4px);
+			background: -o-repeating-linear-gradient(45deg, white, white 2px, #ededed 2px, #ededed 4px);
+			background: -moz-repeating-linear-gradient(45deg, white, white 2px, #ededed 2px, #ededed 4px);
+			background: repeating-linear-gradient(45deg, white, white 2px, #ededed 2px, #ededed 4px);
+			text-align: center;
+			border-top: 0;
+			margin-top: 20px;
+			padding-bottom: 10px;
+
+			.hot-picture {
+				position: relative;
+				margin-top: -40px;
+				padding-bottom: 10px;
+			}
+
+			.blue-text {
+				color: $blue-font;
+			}
+
+			.hot-title {
+				font-size: 14px;
+				padding-bottom: 30px;
+			}
+
+			@media screen and (max-width: 767px) {
+				.hot-info {
+					@include display-flex;
+					flex-wrap: wrap;
+
+					.info-1 {
+						order: 3;
+					}
+					.info-2 {
+						order: 1;
+					}
+					.info-3 {
+						order: 2;
+					}
+					.info-4 {
+						order: 4;
+					}
+				}
+			}
+
+			.hot-info {
+				.num {
+					font-weight: bold;
+				}
+				.text-italic {
+					font-style: italic;
+				}
+			}
+		}
+	}
+}

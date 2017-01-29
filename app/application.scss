@@ -46,6 +46,12 @@ Mixins
 	border-color: $color;
 }
 
+@mixin rotate-rect($degrees) {
+	-webkit-transform: rotate($degrees);
+	-ms-transform: rotate($degrees);
+	transform: rotate($degrees);
+}
+
 /*
 General purpose classes
  */
@@ -56,6 +62,7 @@ General purpose classes
 
 @import 'components/home/_home.scss';
 @import 'components/single-question/_single-question.scss';
+@import 'components/user-profile/_user-profile.scss';
 
 /*
 Main structure
