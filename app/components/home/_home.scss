@@ -3,69 +3,135 @@ Main structure
  */
 
 #home {
+	@media screen and (max-width: 767px) {
+		header {
+			padding-right: 20px;
+			padding-left: 20px;
+		}
+	}
+
 	header {
 		background-color: #ffffff;
 		padding-top: 20px;
 		padding-bottom: 20px;
 
-		#title {
-			@include display-flex;
-			align-items: center;
+		.container {
+			@media screen and (min-width: 768px) {
+				> .row {
+					@include display-flex;
 
-			span {
-				font-size: 32px;
-				font-weight: bold;
-				text-transform: uppercase;
-			}
-		}
-
-		#radioForm {
-			margin-left: auto;
-			align-self: flex-end;
-
-			label {
-				padding-left: 35px;
-				font-weight: bold;
-			}
-		}
-
-		#searchField {
-			background-color: #fbfbfb;
-			border-color: #eeeeee;
-			margin-top: 15px;
-		}
-
-		#searchButtonCol {
-			font-style: italic;
-			@include column-bottom;
-
-			.row {
-				margin-left: 10px;
+					#top-header {
+						@include display-flex;
+					}
+				}
 			}
 
-			#recent {
-				font-style: normal;
-				text-decoration: underline;
-				font-weight: bold;
-				color: $grey-color;
-			}
+			> .row {
 
-			#hot {
-				font-style: normal;
-				font-weight: bold;
-				color: $blue-font;
-			}
+				#top-header {
 
-			.button-block {
-				height: 34px;
-				margin-top: 15px;
-				color: $grey-color;
-				border: solid 1px $grey-color;
-				background-color: white;
-				min-width: 100%;
-				font-style: normal;
-				font-weight: bold;
-				text-transform: uppercase;
+					@media screen and (max-width: 767px) {
+						#title {
+							justify-content: center;
+						}
+					}
+
+					#title {
+						@include display-flex;
+						align-items: center;
+
+						span {
+							font-size: 32px;
+							font-weight: bold;
+							text-transform: uppercase;
+						}
+					}
+
+					@media screen and (max-width: 991px) {
+						#radioForm {
+							@include display-flex;
+							flex-direction: column;
+							align-content: flex-start;
+
+							.radio-inline {
+								margin-left: 0;
+							}
+						}
+					}
+
+					@media screen and (max-width: 767px) {
+						#radioForm {
+							flex-direction: row;
+							justify-content: center;
+							padding-top: 10px;
+						}
+					}
+
+					#radioForm {
+						margin-left: auto;
+						align-self: flex-end;
+
+						label {
+							padding-left: 35px;
+							font-weight: bold;
+						}
+					}
+				}
+
+				#searchField {
+					background-color: #fbfbfb;
+					border-color: #eeeeee;
+					margin-top: 15px;
+				}
+
+				@media screen and (max-width: 767px) {
+					#searchButtonCol {
+						.row {
+							@include display-flex;
+							flex-direction: column-reverse;
+
+							.button-block {
+								margin-bottom: 10px;
+							}
+						}
+					}
+				}
+
+				#searchButtonCol {
+					font-style: italic;
+					@include column-bottom;
+
+					@media screen and (min-width: 768px) {
+						.row {
+							margin-left: 10px;
+						}
+					}
+
+					#recent {
+						font-style: normal;
+						text-decoration: underline;
+						font-weight: bold;
+						color: $grey-color;
+					}
+
+					#hot {
+						font-style: normal;
+						font-weight: bold;
+						color: $blue-font;
+					}
+
+					.button-block {
+						height: 34px;
+						margin-top: 15px;
+						color: $grey-color;
+						border: solid 1px $grey-color;
+						background-color: white;
+						min-width: 100%;
+						font-style: normal;
+						font-weight: bold;
+						text-transform: uppercase;
+					}
+				}
 			}
 		}
 	}
@@ -85,9 +151,11 @@ Main structure
 				padding-top: 10px;
 				padding-bottom: 20px;
 
-				.op-picture {
-					@include display-flex;
-					justify-content: center;
+				@media screen and (min-width: 768px) {
+					.op-picture {
+						@include display-flex;
+						justify-content: center;
+					}
 				}
 
 				.op-name {
@@ -132,14 +200,26 @@ Main structure
 					}
 				}
 
+				@media screen and (max-width: 767px) {
+					.more-column {
+						background-color: #eeeeee;
+						border-top: 1px solid white;
+					}
+				}
+
+				@media screen and (min-width: 768px) {
+					.more-column {
+						border-left: $comment-section-border;
+						margin-top: 30px;
+					}
+				}
+
 				.more-column {
 					@include column-bottom;
 					align-items: center;
 					justify-content: space-between;
-					margin-top: 30px;
 					padding-bottom: $comment-secton-padding-bottom;
 					font-size: 1.2em;
-					border-left: $comment-section-border;
 
 					span {
 						&.num {
@@ -157,16 +237,28 @@ Main structure
 					}
 				}
 
+				@media screen and (min-width: 768px) {
+					.comment-column {
+						border-left: $comment-section-border;
+						margin-top: 30px;
+					}
+				}
+
+				@media screen and (max-width: 767px) {
+					.comment-column {
+						border-left: 1px solid white;
+						border-top: 1px solid white;
+					}
+				}
+
 				.comment-column {
 					@include column-bottom;
 					align-items: center;
 					background-color: #eeeeee;
 					color: $grey-color;
-					margin-top: 30px;
 					padding-top: 20px;
 					padding-bottom: $comment-secton-padding-bottom;
 					text-transform: uppercase;
-					border-left: $comment-section-border;
 
 					&:after {
 						@include dot(inherit);
@@ -189,12 +281,24 @@ Main structure
 				}
 			}
 
+			@media screen and (max-width: 767px) {
+				.question-info {
+					padding-top: 20px;
+					padding-bottom: 20px;
+				}
+			}
+
+			@media screen and (min-width: 768px) {
+				.question-info {
+					margin-top: 30px;
+				}
+			}
+
 			.question-info {
 				@include display-flex;
 				flex-direction: column;
 				justify-content: space-between;
 				padding-left: 40px;
-				margin-top: 30px;
 
 				span {
 					font-style: italic;
