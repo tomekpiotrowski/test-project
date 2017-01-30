@@ -11,9 +11,14 @@
 		<script src="node_modules/angular/angular.js"></script>
 		<script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
 		<script src="node_modules/bootstrap/js/modal.js"></script>
+		<script src="app/app.js"></script>
+		<script src="app/components/home/homeCtrl.js"></script>
+		<script src="app/components/single-question/singleQuestionCtrl.js"></script>
+		<script src="app/components/user-profile/userProfileCtrl.js"></script>
+		<script src="app/services/Users.js"></script>
+		<script src="app/services/Questions.js"></script>
 	</head>
 	<body ng-app="app">
-		<div ng-include="'app/components/home/_home.html'"></div>
-		<script src="app/app.js"></script>
+		<ui-view></ui-view>
 	</body>
 </html>
