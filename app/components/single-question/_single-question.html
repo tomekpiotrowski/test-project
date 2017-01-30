@@ -1,11 +1,12 @@
-<div id="singleQuestion">
-	<header>
+<div ng-controller="SingleQuestionCtrl" id="singleQuestion">
+	<div ng-include="'app/components/user-profile/_user-profile.html'"></div>
 
+	<header>
 		<div class="container">
 			<div class="row" id="headingRow">
-
 				<div class="col-md-2 col-sm-1 col-xs-2">
-					<input type="image" src="app/assets/img/arrow_left.png" alt="previous page" />
+					<input type="image" src="app/assets/img/arrow_left.png" alt="previous page"
+					ui-sref="home" />
 				</div>
 				<div class="col-md-3 col-sm-4 col-xs-10">
 					<div id="heading">
@@ -19,7 +20,6 @@
 					day ago
 				</div>
 				<div class="col-md-2 hidden-sm hidden-xs"></div>
-
 			</div>
 		</div>
 	</header>
@@ -31,26 +31,26 @@
 					<div class="col-md-9 col-sm-9 col-xs-12">
 						<div class="row question-row">
 							<div class="col-md-2 col-sm-2 col-xs-2 op-picture">
-								<img src="app/assets/img/profile-pictures/profile_pic1.png" />
+								<img ng-src="{{ question.user.picture }}" data-toggle="modal" data-target="#myModal"
+								ng-click="getUser(question.user.index)" />
 							</div>
 							<div class="col-md-10 col-sm-10 col-xs-10">
 								<div>
-									<span>Eva</span>
+									<span class="op-name" data-toggle="modal" data-target="#myModal"
+										ng-click="getUser(question.user.index)">
+										{{ question.user.name }}
+									</span>
 									<span class="question-statement">is asking:</span>
 								</div>
 							</div>
 							<div class="col-md-10 col-sm-10 col-xs-12 question-title">
-								Will insulin make my patient gain weight?
+								{{ question.title }}
 							</div>
 						</div>
 						<div class="row text-row">
 							<div class="col-md-2 col-sm-2 hidden-xs empty"></div>
 							<div class="col-md-10 col-sm-10 col-xs-12 question-text">
-								All my patients with diabetes should see an opthalmologist yearly for
-								a dialeted eye examination- begining at diagnosis in people with type
-								2 diabetes and after 5 years in people with type 1 diabetes after puberty.
-								Patients with know eye disease, symptoms of blurred vision in one eye, or
-								blind spots may need to see their ophthalmologist more frequently.
+								{{ question.content }}
 							</div>
 						</div>
 					</div>
@@ -59,7 +59,7 @@
 							unfollow
 						</div>
 						<div class="upvotes">
-							<span>19&nbsp;</span>
+							<span>{{ question.upvotes }}&nbsp;</span>
 							<span class="upvote-text">upvotes</span>
 							<span class="upvote-arrows">
 								<a class="arrow-up">&#x25B2;</a>
@@ -76,159 +76,125 @@
 				</div>
 
 				<div class="comment-num">
-					2&nbsp;&nbsp;
-					<span>peers already answered Eva</span>
+					{{ question.comments.length }}&nbsp;&nbsp;
+					<span>peers already answered {{ question.user.name }}</span>
 				</div>
 
-				<div class="row single-comment">
-					<div class="col-md-9 col-sm-9 col-xs-12">
-
-						<div class="row comment-main-content">
-							<div class="col-md-2 col-sm-2 col-xs-2 comment-picture">
-								<img src="app/assets/img/profile-pictures/profile_pic3.png" />
-							</div>
-							<div class="col-md-10 col-sm-10 col-xs-10">
-								<div class="row">
-									<div class="col-md-12 col-sm-12 col-xs-10 comment-header">
-										<span class="comment-name">Patricia</span>
-										<span class="comment-statement">commented it</span>
-										<span class="comment-dot">&bull;</span>
-										<span class="comment-time">yesterday</span>
-									</div>
-									<div class="col-md-12 col-sm-12 comment-desktop-version">
-										<p>
-											Numbers or tingling in your feet should be reported to your doctor
-											at your regular visits.
-										</p>
-									</div>
+				<!-- main comment template start-->
+				<div ng-repeat="comment in question.comments">
+					<div class="row single-comment">
+						<div class="col-md-9 col-sm-9 col-xs-12">
+							<div class="row comment-main-content">
+								<div class="col-md-2 col-sm-2 col-xs-2 comment-picture">
+									<img ng-src="{{ comment.user.picture }}" data-toggle="modal" data-target="#myModal"
+									ng-click="getUser(comment.user.index)"/>
 								</div>
-							</div>
-						</div>
-						<div class="row comment-mobile-version">
-							<p>
-								Numbers or tingling in your feet should be reported to your doctor
-								at your regular visits.
-							</p>
-						</div>
-
-					</div>
-					<div class="col-md-3 col-sm-3 col-xs-12">
-						<div class="upvotes">
-							<span>8&nbsp;</span>
-							<span class="upvote-text">upvotes</span>
-							<span class="upvote-arrows">
-								<a class="arrow-up">&#x25B2;</a>
-								<a class="arrow-down">&#x25BC;</a>
-							</span>
-						</div>
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="col-md-offset-1 col-md-11 col-sm-offset-1 col-sm-11 col-xs-12">
-						<div class="row single-comment nested-comment">
-							<div class="col-md-9 col-sm-9 col-xs-12">
-								<div class="row comment-main-content">
-									<div class="col-md-2 col-sm-2 col-xs-2 comment-picture">
-										<img src="app/assets/img/profile-pictures/profile_pic4.png" />
-									</div>
-									<div class="col-md-10 col-sm-10 col-xs-10">
-										<div class="row">
-											<div class="col-md-12 col-sm-12 col-xs-10 comment-header">
-												<span class="comment-name">David</span>
-												<span class="comment-statement">commented it</span>
-												<span class="comment-dot">&bull;</span>
-												<span class="comment-time">yesterday</span>
-											</div>
-											<div class="col-md-12 col-sm-12 comment-desktop-version">
-												<p>
-													You should check your feet daily for redness, caluses, or skin
-													breakdown.
-												</p>
-											</div>
+								<div class="col-md-10 col-sm-10 col-xs-10">
+									<div class="row">
+										<div class="col-md-12 col-sm-12 col-xs-10 comment-header">
+											<span class="comment-name" data-toggle="modal" data-target="#myModal"
+												ng-click="getUser(comment.user.index)">
+												{{ comment.user.name }}
+											</span>
+											<span class="comment-statement">commented it</span>
+											<span class="comment-dot">&bull;</span>
+											<span class="comment-time">yesterday</span>
+										</div>
+										<div class="col-md-12 col-sm-12 comment-desktop-version">
+											<p>
+												{{ comment.content }}
+											</p>
 										</div>
 									</div>
 								</div>
-
-								<div class="row comment-mobile-version">
-									<p>
-										You should check your feet daily for redness, caluses, or skin
-										breakdown.
-									</p>
-								</div>
-
 							</div>
-							<div class="col-md-3 col-sm-3 col-xs-12">
-								<div class="upvotes">
-									<span>2&nbsp;</span>
-									<span class="upvote-text">upvotes</span>
-									<span class="upvote-arrows">
-										<a class="arrow-up">&#x25B2;</a>
-										<a class="arrow-down">&#x25BC;</a>
-									</span>
-								</div>
+							<div class="row comment-mobile-version">
+								<p>
+									{{ comment.content }}
+								</p>
+							</div>
+						</div>
+
+						<div class="col-md-3 col-sm-3 col-xs-12">
+							<div class="upvotes">
+								<span>{{ comment.upvotes }}&nbsp;</span>
+								<span class="upvote-text">upvotes</span>
+								<span class="upvote-arrows">
+									<a class="arrow-up">&#x25B2;</a>
+									<a class="arrow-down">&#x25BC;</a>
+								</span>
 							</div>
 						</div>
 					</div>
-				</div>
+					<div ng-if="!comment.comments" class="single-question-button">
+						<button>
+							<span>comment</span>
+						</button>
+					</div>
 
-				<div class="single-question-button">
-					<button>
-						<span>continue</span>
-						discussion
-					</button>
-				</div>
+					<!-- sub comment template start -->
+					<div ng-repeat="subcomment in comment.comments">
+						<div class="row">
+							<div class="col-md-offset-1 col-md-11 col-sm-offset-1 col-sm-11 col-xs-12">
+								<div class="row single-comment nested-comment">
+									<div class="col-md-9 col-sm-9 col-xs-12">
+										<div class="row comment-main-content">
+											<div class="col-md-2 col-sm-2 col-xs-2 comment-picture">
+												<img ng-src="{{ subcomment.user.picture }}" data-toggle="modal"
+												data-target="#myModal" ng-click="getUser(subcomment.user.index)" />
+											</div>
+											<div class="col-md-10 col-sm-10 col-xs-10">
+												<div class="row">
+													<div class="col-md-12 col-sm-12 col-xs-10 comment-header">
+														<span class="comment-name" data-toggle="modal" data-target="#myModal"
+															ng-click="getUser(subcomment.user.index)">
+															{{subcomment.user.name}}
+														</span>
+														<span class="comment-statement">commented it</span>
+														<span class="comment-dot">&bull;</span>
+														<span class="comment-time">yesterday</span>
+													</div>
+													<div class="col-md-12 col-sm-12 comment-desktop-version">
+														<p>
+															{{subcomment.content}}
+														</p>
+													</div>
+												</div>
+											</div>
+										</div>
 
-				<div class="row single-comment">
-					<div class="col-md-9 col-sm-9 col-xs-12">
-						<div class="row comment-main-content">
-							<div class="col-md-2 col-sm-2 col-xs-2 comment-picture">
-								<img src="app/assets/img/profile-pictures/profile_pic5.png" />
-							</div>
-							<div class="col-md-10 col-sm-10 col-xs-10">
-								<div class="row">
-									<div class="col-md-12 col-sm-12 col-xs-10 comment-header">
-										<span class="comment-name">Joseph's</span>
-										<span class="comment-statement">commented it</span>
-										<span class="comment-dot">&bull;</span>
-										<span class="comment-time">two days</span>
+										<div class="row comment-mobile-version">
+											<p>
+												You should check your feet daily for redness, caluses, or skin
+												breakdown.
+											</p>
+										</div>
+
 									</div>
-									<div class="col-md-12 col-sm-12 comment-desktop-version">
-										<p>
-											When your blood sugar is low, your body gives out signs that
-											you need food. Different people have different symptoms. You
-											will learn to know your symptoms.
-										</p>
+									<div class="col-md-3 col-sm-3 col-xs-12">
+										<div class="upvotes">
+											<span>{{ subcomment.upvotes }}&nbsp;</span>
+											<span class="upvote-text">upvotes</span>
+											<span class="upvote-arrows">
+												<a class="arrow-up">&#x25B2;</a>
+												<a class="arrow-down">&#x25BC;</a>
+											</span>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="row comment-mobile-version">
-							<p>
-								When your blood sugar is low, your body gives out signs that
-								you need food. Different people have different symptoms. You
-								will learn to know your symptoms.
-							</p>
+						<div class="single-question-button">
+							<button>
+								<span>continue</span>
+								discussion
+							</button>
 						</div>
 					</div>
-					<div class="col-md-3 col-sm-3 col-xs-12">
-						<div class="upvotes">
-							<span>3&nbsp;</span>
-							<span class="upvote-text">downvotes</span>
-							<span class="upvote-arrows">
-								<a class="arrow-up">&#x25B2;</a>
-								<a class="arrow-down">&#x25BC;</a>
-							</span>
-						</div>
-					</div>
+					<!-- sub comment template end -->
 				</div>
-				<!--old-->
+				<!-- main comment template end -->
 
-				<div class="single-question-button">
-					<button>
-						<span>comment</span>
-					</button>
-				</div>
 
 			</div>
 			<div class="col-md-2"></div>

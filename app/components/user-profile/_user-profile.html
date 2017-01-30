@@ -1,10 +1,5 @@
-<div id="user-profile">
-	<!-- Button trigger modal -->
-	<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-		Launch demo modal
-	</button>
+<div ng-controller="UserProfileCtrl" id="user-profile">
 
-	<!-- Modal -->
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
@@ -13,9 +8,9 @@
 						<span aria-hidden="true">&times;</span>
 					</button>
 					<div>
-						<img src="app/assets/img/profile-pictures/profile_pic7.png">
+						<img ng-src="{{ user.picture }}">
 					</div>
-					<h4 class="modal-title" id="myModalLabel">Dr. Halima</h4>
+					<h4 class="modal-title" id="myModalLabel">{{ user.name }}</h4>
 					<div class="row profile-info">
 						<div class="col-md-4 col-sm-4">
 							<span class="grey-text">member for</span>

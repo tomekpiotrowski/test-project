@@ -1,4 +1,6 @@
-<div id="home">
+<div ng-controller="HomeCtrl" id="home">
+	<div ng-include="'app/components/user-profile/_user-profile.html'"></div>
+
 	<header>
 		<div class="container">
 			<div class="row">
@@ -43,21 +45,29 @@
 	</header>
 
 	<div class="container" id="questions">
+
+		<!-- question template start -->
+
 		<div class="row">
-			<div class="col-md-offset-2 col-md-8 col-sm-12 col-xs-12 question-container">
+			<div class="col-md-offset-2 col-md-8 col-sm-12 col-xs-12 question-container"
+				ng-repeat="question in questions">
 				<div class="row">
 					<div class="col-md-9 col-sm-12 col-xs-12">
 						<div class="row question-section">
 							<div class="col-md-2 col-sm-2 col-xs-2 op-picture">
-								<img src="app/assets/img/profile-pictures/profile_pic1.png" />
+								<img ng-src="{{ question.user.picture }}" data-toggle="modal" data-target="#myModal"
+								ng-click="getUser(question.user.index)" />
 							</div>
 							<div class="col-md-10 col-sm-10 col-xs-10">
 								<div>
-									<span class="op-name">Eva&nbsp;</span>
+									<span class="op-name" ng-click="getUser(question.user.index)"
+										data-toggle="modal" data-target="#myModal">
+										{{ question.user.name }}&nbsp;
+									</span>
 									<span class="question-phrase">is asking:</span>
 								</div>
-								<div class="question-topic">
-									Will insulin make my patient gain weight?
+								<div class="question-topic" ui-sref="question({id: {{question.index}}})">
+									{{ question.title }}
 								</div>
 							</div>
 						</div>
@@ -75,23 +85,22 @@
 								<span class="num">3</span>
 								<span class="more">more activities</span>
 							</div>
-							<div class="col-md-2 hidden-sm hidden-xs comment-column">
-								<img src="app/assets/img/profile-pictures/profile_pic2.png">
+
+							<!--comment template start -->
+							<div class="col-md-2 comment-column"
+								ng-repeat="comment in question.comments | limitTo: displayedColNum"
+								ng-hide="$last">
+								<img ng-click="getUser(comment.user.index)" ng-src="{{ comment.user.picture }}"
+								data-toggle="modal" data-target="#myModal">
 								<hr class="line">
 								<span>commented</span>
 							</div>
-							<div class="col-md-2 hidden-sm hidden-xs comment-column">
-								<img src="app/assets/img/profile-pictures/profile_pic3.png">
-								<hr class="line">
-								<span>commented</span>
-							</div>
-							<div class="col-md-2 hidden-sm hidden-xs comment-column">
-								<img src="app/assets/img/profile-pictures/profile_pic4.png">
-								<hr class="line">
-								<span>commented</span>
-							</div>
+							<!-- comment template end -->
+
 							<div class="col-md-2 col-sm-4 col-xs-6 comment-column answered">
-								<img src="app/assets/img/profile-pictures/profile_pic5.png">
+								<img ng-click="getUser(question.comments[question.comments.length-1].user.index)"
+								ng-src="{{ question.comments[question.comments.length-1].user.picture }}"
+								data-toggle="modal" data-target="#myModal">
 								<hr class="line">
 								<span>answered</span>
 							</div>
@@ -106,6 +115,7 @@
 			</div>
 			<div class="col-md-2 hidden-sm hidden-xs"></div>
 		</div>
+		<!-- question template end-->
 
 		<div class="row">
 			<div id="load-more" class="col-md-offset-2 col-md-8">

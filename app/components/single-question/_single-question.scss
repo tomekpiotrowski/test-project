@@ -125,6 +125,11 @@ Main structure
 				.op-picture {
 					@include display-flex;
 					justify-content: center;
+					cursor: pointer;
+				}
+
+				.op-name {
+					cursor: pointer;
 				}
 
 				.question-statement {
@@ -261,6 +266,7 @@ Main structure
 
 					.comment-name {
 						color: $blue-font;
+						cursor: pointer;
 					}
 					.comment-statement {
 						color: $grey-color;
@@ -279,6 +285,7 @@ Main structure
 					@include display-flex;
 					justify-content: center;
 					align-self: stretch;
+					cursor: pointer;
 
 					img {
 						align-self: center;

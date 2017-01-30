@@ -138,8 +138,11 @@ Main structure
           display: -ms-flexbox;
           display: flex;
           justify-content: center; } }
+      #home #questions .question-container .question-section .op-picture {
+        cursor: pointer; }
       #home #questions .question-container .question-section .op-name {
-        color: #0266b3; }
+        color: #0266b3;
+        cursor: pointer; }
       #home #questions .question-container .question-section .question-phrase {
         font-size: 10px;
         color: #a7a9ac;
@@ -147,7 +150,8 @@ Main structure
       #home #questions .question-container .question-section .question-topic {
         color: #0266b3;
         font-style: italic;
-        font-size: 17px; }
+        font-size: 17px;
+        cursor: pointer; }
     #home #questions .question-container .comment-section {
       font-size: 10px;
       font-weight: bold; }
@@ -223,6 +227,8 @@ Main structure
         padding-top: 20px;
         padding-bottom: 0.6em;
         text-transform: uppercase; }
+        #home #questions .question-container .comment-section .comment-column img {
+          cursor: pointer; }
         #home #questions .question-container .comment-section .comment-column:after {
           content: '\25CF';
           font-size: 20px;
@@ -375,7 +381,10 @@ Main structure
         display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;
-        justify-content: center; }
+        justify-content: center;
+        cursor: pointer; }
+      #singleQuestion #discussionField .question-field .question-row .op-name {
+        cursor: pointer; }
       #singleQuestion #discussionField .question-field .question-row .question-statement {
         font-size: 10px;
         color: #a7a9ac;
@@ -474,7 +483,8 @@ Main structure
       padding-top: 10px;
       padding-bottom: 10px; }
       #singleQuestion #discussionField .single-comment .comment-main-content .comment-header .comment-name {
-        color: #0266b3; }
+        color: #0266b3;
+        cursor: pointer; }
       #singleQuestion #discussionField .single-comment .comment-main-content .comment-header .comment-statement {
         color: #a7a9ac;
         text-transform: uppercase;
@@ -489,7 +499,8 @@ Main structure
       display: -ms-flexbox;
       display: flex;
       justify-content: center;
-      align-self: stretch; }
+      align-self: stretch;
+      cursor: pointer; }
       #singleQuestion #discussionField .single-comment .comment-main-content .comment-picture img {
         align-self: center; }
     #singleQuestion #discussionField .single-comment .comment-mobile-version {

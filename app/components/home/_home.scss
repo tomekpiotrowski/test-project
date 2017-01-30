@@ -158,8 +158,13 @@ Main structure
 					}
 				}
 
+				.op-picture {
+					cursor: pointer;
+				}
+
 				.op-name {
 					color: $blue-font;
+					cursor: pointer;
 				}
 
 				.question-phrase {
@@ -172,6 +177,7 @@ Main structure
 					color: $blue-font;
 					font-style: italic;
 					font-size: 17px;
+					cursor: pointer;
 				}
 			}
 
@@ -259,6 +265,10 @@ Main structure
 					padding-top: 20px;
 					padding-bottom: $comment-secton-padding-bottom;
 					text-transform: uppercase;
+
+					img {
+						cursor: pointer;
+					}
 
 					&:after {
 						@include dot(inherit);
