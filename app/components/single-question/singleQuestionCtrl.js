@@ -10,4 +10,14 @@ angular.module('app')
 				$rootScope.userIndex = index;
 			};
 
+			//voting functionality
+			$scope.upvote = function(num) {
+				num++;
+				return num;
+			};
+			$scope.downvote = function(num) {
+				num--;
+				return num;
+			};
+
 		}]);

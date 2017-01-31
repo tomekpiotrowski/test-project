@@ -20,4 +20,10 @@ angular.module('app', ['ui.router'])
 
 		$urlRouterProvider.otherwise('/home');
 
-	}]);
+	}])
+
+	.filter('positive', function() {
+		return function(num) {
+			return Math.abs(num);
+		};
+	});

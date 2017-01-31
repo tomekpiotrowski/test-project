@@ -1,4 +1,4 @@
-<div ng-controller="SingleQuestionCtrl" id="singleQuestion">
+<div id="singleQuestion">
 	<div ng-include="'app/components/user-profile/_user-profile.html'"></div>
 
 	<header>
@@ -59,11 +59,15 @@
 							unfollow
 						</div>
 						<div class="upvotes">
-							<span>{{ question.upvotes }}&nbsp;</span>
-							<span class="upvote-text">upvotes</span>
+							<span>{{ question.upvotes | positive }}&nbsp;</span>
+							<span class="upvote-text">
+								{{ question.votesValue = question.upvotes >= 0 ? "upvote" : "downvote" }}
+							</span>
 							<span class="upvote-arrows">
-								<a class="arrow-up">&#x25B2;</a>
-								<a class="arrow-down">&#x25BC;</a>
+								<a ng-click="question.upvotes = upvote(question.upvotes)"
+									class="arrow-up">&#x25B2;</a>
+								<a ng-click="question.upvotes = downvote(question.upvotes)"
+									class="arrow-down">&#x25BC;</a>
 							</span>
 						</div>
 					</div>
@@ -117,11 +121,15 @@
 
 						<div class="col-md-3 col-sm-3 col-xs-12">
 							<div class="upvotes">
-								<span>{{ comment.upvotes }}&nbsp;</span>
-								<span class="upvote-text">upvotes</span>
+								<span>{{ comment.upvotes | positive }}&nbsp;</span>
+								<span class="upvote-text">
+									{{ comment.votesValue = comment.upvotes >= 0 ? "upvote" : "downvote" }}
+								</span>
 								<span class="upvote-arrows">
-									<a class="arrow-up">&#x25B2;</a>
-									<a class="arrow-down">&#x25BC;</a>
+									<a ng-click="comment.upvotes = upvote(comment.upvotes)"
+										class="arrow-up">&#x25B2;</a>
+									<a ng-click="comment.upvotes = downvote(comment.upvotes)"
+										class="arrow-down">&#x25BC;</a>
 								</span>
 							</div>
 						</div>
@@ -173,11 +181,15 @@
 									</div>
 									<div class="col-md-3 col-sm-3 col-xs-12">
 										<div class="upvotes">
-											<span>{{ subcomment.upvotes }}&nbsp;</span>
-											<span class="upvote-text">upvotes</span>
+											<span>{{ subcomment.upvotes | positive }}&nbsp;</span>
+											<span class="upvote-text">
+												{{ subcomment.votesValue = subcomment.upvotes >= 0 ? "upvote" : "downvote" }}
+											</span>
 											<span class="upvote-arrows">
-												<a class="arrow-up">&#x25B2;</a>
-												<a class="arrow-down">&#x25BC;</a>
+												<a ng-click="subcomment.upvotes = upvote(subcomment.upvotes)"
+													class="arrow-up">&#x25B2;</a>
+												<a ng-click="subcomment.upvotes = downvote(subcomment.upvotes)"
+													class="arrow-down">&#x25BC;</a>
 											</span>
 										</div>
 									</div>
