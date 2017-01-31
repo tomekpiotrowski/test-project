@@ -15,11 +15,11 @@
 						</span>
 						<span id="radioForm">
 							<label class="radio-inline">
-								<input name="filter" value="my_shelf" type="radio" checked />
+								<input name="filter" value="my_shelf" type="radio" checked ng-model="radioForm.value" />
 								My shelf
 							</label>
 							<label class="radio-inline">
-								<input name="filter" value="all_questions" type="radio" />
+								<input name="filter" value="all_questions" type="radio" ng-model="radioForm.value" />
 								All questions
 							</label>
 						</span>
@@ -33,9 +33,11 @@
 					<div class="row">
 						<div class="pull-right">
 							<span>Sort by:&nbsp;</span>
-							<span id="recent">recent</span>
+							<span id="recent" ng-click="sortRecent()"
+								ng-class="(sort === '-index') ? 'selectedSort' : '' ">recent</span>
 							<span>&nbsp;or&nbsp;</span>
-							<span id="hot">hot</span>
+							<span id="hot" ng-click="sortHot()"
+								ng-class="(sort === '-comments.length') ? 'selectedSort' : '' ">hot</span>
 						</div>
 						<button class="button-block" ng-click="searchQuery()">Search</button>
 					</div>
@@ -48,10 +50,10 @@
 	<div class="container" id="questions">
 
 		<!-- question template start -->
-
 		<div class="row">
 			<div class="col-md-offset-2 col-md-8 col-sm-12 col-xs-12 question-container"
-				ng-repeat="question in questions | filter:{ title: searchResult }">
+				ng-repeat="question in questions | orderBy: '-index' | filter:{ title: searchResult } |
+				orderBy: sort | filter: { followed: followed }">
 				<div class="row">
 					<div class="col-md-9 col-sm-12 col-xs-12">
 						<div class="row question-section">
@@ -90,7 +92,7 @@
 							<!--comment template start -->
 							<div class="col-md-2 comment-column"
 								ng-repeat="comment in question.comments | limitTo: displayedColNum"
-								ng-hide="$last">
+								ng-if="!$last">
 								<img ng-click="getUser(comment.user.index)" ng-src="{{ comment.user.picture }}"
 								data-toggle="modal" data-target="#myModal">
 								<hr class="line">

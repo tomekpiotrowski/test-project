@@ -55,9 +55,7 @@ Main structure
       display: -ms-flexbox;
       display: flex;
       flex-direction: column;
-      align-content: flex-start; }
-      #home header .container > .row #top-header #radioForm .radio-inline {
-        margin-left: 0; } }
+      align-content: flex-start; } }
   @media screen and (max-width: 767px) {
     #home header .container > .row #top-header #radioForm {
       flex-direction: row;
@@ -67,8 +65,10 @@ Main structure
     margin-left: auto;
     align-self: flex-end; }
     #home header .container > .row #top-header #radioForm label {
-      padding-left: 35px;
+      margin-left: 35px;
       font-weight: bold; }
+      #home header .container > .row #top-header #radioForm label input {
+        cursor: pointer; }
   #home header .container > .row #searchField {
     background-color: #fbfbfb;
     border-color: #eeeeee;
@@ -96,12 +96,15 @@ Main structure
     #home header .container > .row #searchButtonCol #recent {
       font-style: normal;
       text-decoration: underline;
-      font-weight: bold;
-      color: #a7a9ac; }
+      color: #a7a9ac;
+      cursor: pointer; }
     #home header .container > .row #searchButtonCol #hot {
       font-style: normal;
+      color: #0266b3;
+      cursor: pointer; }
+    #home header .container > .row #searchButtonCol .selectedSort {
       font-weight: bold;
-      color: #0266b3; }
+      font-size: 17px; }
     #home header .container > .row #searchButtonCol .button-block {
       height: 34px;
       margin-top: 15px;
@@ -411,12 +414,6 @@ Main structure
         #singleQuestion #discussionField .question-field .text-row .question-text {
           padding: 10px;
           color: #a7a9ac; } }
-    @media screen and (min-width: 768px) {
-      #singleQuestion #discussionField .question-field .unfollow {
-        background-color: #dff3fd;
-        height: 70px;
-        justify-content: flex-end;
-        padding-right: 60px; } }
     @media screen and (max-width: 767px) {
       #singleQuestion #discussionField .question-field .more-options {
         display: -webkit-box;
@@ -425,15 +422,22 @@ Main structure
         display: flex;
         justify-content: space-between;
         padding-bottom: 20px; }
-        #singleQuestion #discussionField .question-field .more-options .unfollow {
+        #singleQuestion #discussionField .question-field .more-options .follow {
           padding-left: 10px; } }
-    #singleQuestion #discussionField .question-field .more-options .unfollow {
+    @media screen and (min-width: 768px) {
+      #singleQuestion #discussionField .question-field .more-options .follow {
+        background-color: #dff3fd;
+        height: 70px;
+        justify-content: flex-end;
+        padding-right: 60px; } }
+    #singleQuestion #discussionField .question-field .more-options .follow {
       color: #0266b3;
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
-      align-items: center; }
+      align-items: center;
+      cursor: pointer; }
   #singleQuestion #discussionField .single-question-button {
     text-align: center; }
     #singleQuestion #discussionField .single-question-button button {

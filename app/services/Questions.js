@@ -12,6 +12,7 @@ angular.module('app')
 				"blind spots may need to see their ophthalmologist more frequently.",
 				upvotes: 0,
 				votesValue: "upvotes",
+				followed: true,
 				comments: [
 					{
 						user: Users[1],
@@ -59,7 +60,15 @@ angular.module('app')
 				"mollit anim id est laborum.",
 				upvotes: 0,
 				votesValue: "upvotes",
+				followed: false,
 				comments: [
+					{
+						user: Users[1],
+						upvotes: 0,
+						votesValue: "upvotes",
+						content: "Numbers or tingling in your feet should be " +
+						"reported to your doctor at your regular visits."
+					},
 					{
 						user: Users[3],
 						upvotes: 0,
@@ -100,6 +109,7 @@ angular.module('app')
 				"illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
 				upvotes: 0,
 				votesValue: "upvotes",
+				followed: true,
 				comments: [
 					{
 						user: Users[6],
@@ -121,6 +131,13 @@ angular.module('app')
 						votesValue: "upvotes",
 						content: "You should check your feet daily for redness, " +
 						"caluses, cracks or skin breakdown."
+					},
+					{
+						user: Users[1],
+						upvotes: 0,
+						votesValue: "upvotes",
+						content: "Numbers or tingling in your feet should be " +
+						"reported to your doctor at your regular visits."
 					}
 				]
 			}

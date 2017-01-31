@@ -173,22 +173,13 @@ Main structure
 				}
 			}
 
-			@media screen and (min-width: 768px) {
-				.unfollow {
-					background-color: $question-background;
-					height: 70px;
-					justify-content: flex-end;
-					padding-right: 60px;
-				}
-			}
-
 			@media screen and (max-width:767px) {
 				.more-options {
 					@include display-flex;
 					justify-content: space-between;
 					padding-bottom: 20px;
 
-					.unfollow {
+					.follow {
 						padding-left: 10px;
 					}
 				}
@@ -196,10 +187,20 @@ Main structure
 
 			.more-options {
 
-				.unfollow {
+				@media screen and (min-width: 768px) {
+					.follow {
+						background-color: $question-background;
+						height: 70px;
+						justify-content: flex-end;
+						padding-right: 60px;
+					}
+				}
+
+				.follow {
 					color: $blue-font;
 					@include display-flex;
 					align-items: center;
+					cursor: pointer;
 				}
 			}
 		}

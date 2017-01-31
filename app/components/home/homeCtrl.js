@@ -10,13 +10,15 @@ angular.module('app')
 				});
 			});
 
+			$scope.documentWidth = $window.innerWidth;
+
 			$scope.$watch('documentWidth', function(newValue) {
 				if (newValue <= 767) {
 					$scope.displayedColNum = 0;
 				} else if (newValue >= 768 && newValue <= 991) {
 					$scope.displayedColNum = 0;
 				} else if (newValue >= 992) {
-					$scope.displayedColNum = 3;
+					$scope.displayedColNum = 4;
 				}
 			});
 
@@ -28,5 +30,23 @@ angular.module('app')
 			$scope.searchQuery = function() {
 				$scope.searchResult = $scope.searchInput || "";
 			};
+
+			//sorting functions
+			$scope.sortHot = function() {
+				$scope.sort = '-comments.length';
+			};
+
+			$scope.sortRecent = function() {
+				$scope.sort = '-index';
+			};
+
+			$scope.radioForm = {value: "my_shelf"};
+			$scope.$watch('radioForm.value', function(newValue) {
+				if (newValue === "my_shelf") {
+					$scope.followed = true;
+				} else {
+					$scope.followed = "";
+				}
+			});
 
 		}]);
