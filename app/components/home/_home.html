@@ -1,4 +1,4 @@
-<div ng-controller="HomeCtrl" id="home">
+<div id="home">
 	<div ng-include="'app/components/user-profile/_user-profile.html'"></div>
 
 	<header>
@@ -25,7 +25,8 @@
 						</span>
 					</div>
 					<div class="row">
-						<input type="text" class="form-control" placeholder="Search questions" id="searchField" />
+						<input type="text" class="form-control" placeholder="Search questions" id="searchField"
+						ng-model="searchInput" ng-keypress="$event.keyCode == 13 ? searchQuery() : null" />
 					</div>
 				</div>
 				<div class="col-md-2 col-sm-3 col-xs-12" id="searchButtonCol">
@@ -36,7 +37,7 @@
 							<span>&nbsp;or&nbsp;</span>
 							<span id="hot">hot</span>
 						</div>
-						<button class="button-block">Search</button>
+						<button class="button-block" ng-click="searchQuery()">Search</button>
 					</div>
 				</div>
 				<div class="col-md-2 hidden-sm hidden-xs"></div>
@@ -50,7 +51,7 @@
 
 		<div class="row">
 			<div class="col-md-offset-2 col-md-8 col-sm-12 col-xs-12 question-container"
-				ng-repeat="question in questions">
+				ng-repeat="question in questions | filter:{ title: searchResult }">
 				<div class="row">
 					<div class="col-md-9 col-sm-12 col-xs-12">
 						<div class="row question-section">
