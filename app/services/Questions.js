@@ -140,6 +140,324 @@ angular.module('app')
 						"reported to your doctor at your regular visits."
 					}
 				]
+			},
+			{
+				index: 3,
+				user: Users[3],
+				title: "Vegan diet in diabetes treatment?",
+				content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do " +
+				"eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim " +
+				"ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut " +
+				"aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit " +
+				"in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur " +
+				"sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt " +
+				"mollit anim id est laborum.",
+				upvotes: 0,
+				votesValue: "upvotes",
+				followed: true,
+				comments: [
+					{
+						user: Users[1],
+						upvotes: 0,
+						votesValue: "upvotes",
+						content: "Numbers or tingling in your feet should be " +
+						"reported to your doctor at your regular visits."
+					},
+					{
+						user: Users[3],
+						upvotes: 0,
+						votesValue: "upvotes",
+						content: "Numbers or tingling in your feet should be " +
+						"reported to your doctor at your regular visits."
+					},
+					{
+						user: Users[4],
+						upvotes: 0,
+						votesValue: "upvotes",
+						content: "Numbers or tingling in your feet should be " +
+						"reported to your doctor at your regular visits."
+					},
+					{
+						user: Users[6],
+						upvotes: 0,
+						votesValue: "upvotes",
+						content: "You should check your feet daily for redness, " +
+						"caluses, cracks or skin breakdown."
+					},
+					{
+						user: Users[2],
+						upvotes: 0,
+						votesValue: "upvotes",
+						content: "When your blood sugar is low, your body gives out signs " +
+						"that you need food. Different people have different symptoms. You " +
+						"will learn to know your symptoms."
+					}
+				]
+			},
+			{
+				index: 4,
+				user: Users[0],
+				title: "Vegan diet in diabetes treatment?",
+				content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do " +
+				"eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim " +
+				"ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut " +
+				"aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit " +
+				"in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur " +
+				"sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt " +
+				"mollit anim id est laborum.",
+				upvotes: 0,
+				votesValue: "upvotes",
+				followed: true,
+				comments: [
+					{
+						user: Users[1],
+						upvotes: 0,
+						votesValue: "upvotes",
+						content: "Numbers or tingling in your feet should be " +
+						"reported to your doctor at your regular visits."
+					},
+					{
+						user: Users[3],
+						upvotes: 0,
+						votesValue: "upvotes",
+						content: "Numbers or tingling in your feet should be " +
+						"reported to your doctor at your regular visits."
+					},
+					{
+						user: Users[4],
+						upvotes: 0,
+						votesValue: "upvotes",
+						content: "Numbers or tingling in your feet should be " +
+						"reported to your doctor at your regular visits."
+					},
+					{
+						user: Users[6],
+						upvotes: 0,
+						votesValue: "upvotes",
+						content: "You should check your feet daily for redness, " +
+						"caluses, cracks or skin breakdown."
+					},
+					{
+						user: Users[2],
+						upvotes: 0,
+						votesValue: "upvotes",
+						content: "When your blood sugar is low, your body gives out signs " +
+						"that you need food. Different people have different symptoms. You " +
+						"will learn to know your symptoms."
+					}
+				]
+			},
+			{
+				index: 5,
+				user: Users[2],
+				title: "Vegan diet in diabetes treatment?",
+				content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do " +
+				"eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim " +
+				"ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut " +
+				"aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit " +
+				"in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur " +
+				"sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt " +
+				"mollit anim id est laborum.",
+				upvotes: 0,
+				votesValue: "upvotes",
+				followed: false,
+				comments: [
+					{
+						user: Users[1],
+						upvotes: 0,
+						votesValue: "upvotes",
+						content: "Numbers or tingling in your feet should be " +
+						"reported to your doctor at your regular visits."
+					},
+					{
+						user: Users[3],
+						upvotes: 0,
+						votesValue: "upvotes",
+						content: "Numbers or tingling in your feet should be " +
+						"reported to your doctor at your regular visits."
+					},
+					{
+						user: Users[4],
+						upvotes: 0,
+						votesValue: "upvotes",
+						content: "Numbers or tingling in your feet should be " +
+						"reported to your doctor at your regular visits."
+					},
+					{
+						user: Users[6],
+						upvotes: 0,
+						votesValue: "upvotes",
+						content: "You should check your feet daily for redness, " +
+						"caluses, cracks or skin breakdown."
+					},
+					{
+						user: Users[2],
+						upvotes: 0,
+						votesValue: "upvotes",
+						content: "When your blood sugar is low, your body gives out signs " +
+						"that you need food. Different people have different symptoms. You " +
+						"will learn to know your symptoms."
+					}
+				]
+			},
+			{
+				index: 6,
+				user: Users[3],
+				title: "Vegan diet in diabetes treatment?",
+				content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do " +
+				"eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim " +
+				"ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut " +
+				"aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit " +
+				"in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur " +
+				"sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt " +
+				"mollit anim id est laborum.",
+				upvotes: 0,
+				votesValue: "upvotes",
+				followed: false,
+				comments: [
+					{
+						user: Users[1],
+						upvotes: 0,
+						votesValue: "upvotes",
+						content: "Numbers or tingling in your feet should be " +
+						"reported to your doctor at your regular visits."
+					},
+					{
+						user: Users[3],
+						upvotes: 0,
+						votesValue: "upvotes",
+						content: "Numbers or tingling in your feet should be " +
+						"reported to your doctor at your regular visits."
+					},
+					{
+						user: Users[4],
+						upvotes: 0,
+						votesValue: "upvotes",
+						content: "Numbers or tingling in your feet should be " +
+						"reported to your doctor at your regular visits."
+					},
+					{
+						user: Users[6],
+						upvotes: 0,
+						votesValue: "upvotes",
+						content: "You should check your feet daily for redness, " +
+						"caluses, cracks or skin breakdown."
+					},
+					{
+						user: Users[2],
+						upvotes: 0,
+						votesValue: "upvotes",
+						content: "When your blood sugar is low, your body gives out signs " +
+						"that you need food. Different people have different symptoms. You " +
+						"will learn to know your symptoms."
+					}
+				]
+			},
+			{
+				index: 7,
+				user: Users[4],
+				title: "Vegan diet in diabetes treatment?",
+				content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do " +
+				"eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim " +
+				"ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut " +
+				"aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit " +
+				"in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur " +
+				"sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt " +
+				"mollit anim id est laborum.",
+				upvotes: 0,
+				votesValue: "upvotes",
+				followed: false,
+				comments: [
+					{
+						user: Users[1],
+						upvotes: 0,
+						votesValue: "upvotes",
+						content: "Numbers or tingling in your feet should be " +
+						"reported to your doctor at your regular visits."
+					},
+					{
+						user: Users[3],
+						upvotes: 0,
+						votesValue: "upvotes",
+						content: "Numbers or tingling in your feet should be " +
+						"reported to your doctor at your regular visits."
+					},
+					{
+						user: Users[4],
+						upvotes: 0,
+						votesValue: "upvotes",
+						content: "Numbers or tingling in your feet should be " +
+						"reported to your doctor at your regular visits."
+					},
+					{
+						user: Users[6],
+						upvotes: 0,
+						votesValue: "upvotes",
+						content: "You should check your feet daily for redness, " +
+						"caluses, cracks or skin breakdown."
+					},
+					{
+						user: Users[2],
+						upvotes: 0,
+						votesValue: "upvotes",
+						content: "When your blood sugar is low, your body gives out signs " +
+						"that you need food. Different people have different symptoms. You " +
+						"will learn to know your symptoms."
+					}
+				]
+			},
+			{
+				index: 8,
+				user: Users[6],
+				title: "Vegan diet in diabetes treatment?",
+				content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do " +
+				"eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim " +
+				"ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut " +
+				"aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit " +
+				"in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur " +
+				"sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt " +
+				"mollit anim id est laborum.",
+				upvotes: 0,
+				votesValue: "upvotes",
+				followed: false,
+				comments: [
+					{
+						user: Users[1],
+						upvotes: 0,
+						votesValue: "upvotes",
+						content: "Numbers or tingling in your feet should be " +
+						"reported to your doctor at your regular visits."
+					},
+					{
+						user: Users[3],
+						upvotes: 0,
+						votesValue: "upvotes",
+						content: "Numbers or tingling in your feet should be " +
+						"reported to your doctor at your regular visits."
+					},
+					{
+						user: Users[4],
+						upvotes: 0,
+						votesValue: "upvotes",
+						content: "Numbers or tingling in your feet should be " +
+						"reported to your doctor at your regular visits."
+					},
+					{
+						user: Users[6],
+						upvotes: 0,
+						votesValue: "upvotes",
+						content: "You should check your feet daily for redness, " +
+						"caluses, cracks or skin breakdown."
+					},
+					{
+						user: Users[2],
+						upvotes: 0,
+						votesValue: "upvotes",
+						content: "When your blood sugar is low, your body gives out signs " +
+						"that you need food. Different people have different symptoms. You " +
+						"will learn to know your symptoms."
+					}
+				]
 			}
 		];
 		return questions;

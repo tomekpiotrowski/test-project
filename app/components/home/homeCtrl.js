@@ -40,13 +40,36 @@ angular.module('app')
 				$scope.sort = '-index';
 			};
 
-			$scope.radioForm = {value: "my_shelf"};
+			$scope.radioForm = { value: "all_questions" };
 			$scope.$watch('radioForm.value', function(newValue) {
 				if (newValue === "my_shelf") {
 					$scope.followed = true;
+
+					$scope.questionsLimit = "";
 				} else {
 					$scope.followed = "";
+
+					$scope.questionsNum = $scope.questions.length;
+					$scope.questionsLimit = 3;
+					if ($scope.questionsNum - 3 <= 0) {
+						$scope.remaining = 0;
+					} else {
+						$scope.remaining = $scope.questionsNum - 3;
+					}
 				}
 			});
+
+			if ($scope.radioForm.value === "my_shelf") {
+				$scope.questionsLimit = "";
+			}
+
+			$scope.loadMore = function() {
+				$scope.questionsLimit+=3;
+				if ($scope.remaining <= 0) {
+					$scope.remaining = 0;
+				} else {
+					$scope.remaining -= 3;
+				}
+			};
 
 		}]);

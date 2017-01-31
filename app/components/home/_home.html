@@ -15,7 +15,7 @@
 						</span>
 						<span id="radioForm">
 							<label class="radio-inline">
-								<input name="filter" value="my_shelf" type="radio" checked ng-model="radioForm.value" />
+								<input name="filter" value="my_shelf" type="radio" ng-model="radioForm.value" />
 								My shelf
 							</label>
 							<label class="radio-inline">
@@ -52,8 +52,9 @@
 		<!-- question template start -->
 		<div class="row">
 			<div class="col-md-offset-2 col-md-8 col-sm-12 col-xs-12 question-container"
-				ng-repeat="question in questions | orderBy: '-index' | filter:{ title: searchResult } |
-				orderBy: sort | filter: { followed: followed }">
+				ng-repeat="question in questions | limitTo: questionsLimit |
+				orderBy: '-index' | filter:{ title: searchResult } |
+				orderBy: sort | filter: { followed: followed } | limitTo: questionsLimit">
 				<div class="row">
 					<div class="col-md-9 col-sm-12 col-xs-12">
 						<div class="row question-section">
@@ -122,7 +123,10 @@
 
 		<div class="row">
 			<div id="load-more" class="col-md-offset-2 col-md-8">
-				load more questions
+				<span ng-click="loadMore()" ng-hide="radioForm.value === 'my_shelf'">
+					load more questions
+					<span> ({{ remaining }} more)</span>
+				</span>
 			</div>
 			<div class="col-md-2"></div>
 		</div>

@@ -281,6 +281,8 @@ Main structure
     box-shadow: 2px 0 8px -2px #cbcdcf;
     padding-top: 30px;
     padding-bottom: 35px; }
+    #home #questions #load-more span {
+      cursor: pointer; }
 
 /*
 General purpose classes
