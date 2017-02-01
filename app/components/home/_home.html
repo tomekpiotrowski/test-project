@@ -57,11 +57,11 @@
 				<div class="row">
 					<div class="col-md-9 col-sm-12 col-xs-12">
 						<div class="row question-section">
-							<div class="col-md-2 col-sm-2 col-xs-2 op-picture">
+							<div class="col-md-2 col-sm-2 col-xs-3 op-picture">
 								<img ng-src="{{ question.user.picture }}" data-toggle="modal" data-target="#myModal"
 								ng-click="getUser(question.user.index)" />
 							</div>
-							<div class="col-md-10 col-sm-10 col-xs-10">
+							<div class="col-md-10 col-sm-10 col-xs-9">
 								<div>
 									<span class="op-name" ng-click="getUser(question.user.index)"
 										data-toggle="modal" data-target="#myModal">
@@ -69,7 +69,7 @@
 									</span>
 									<span class="question-phrase">is asking:</span>
 								</div>
-								<div class="question-topic" ui-sref="question({id: {{question.index}}})">
+								<div class="question-topic" ui-sref="question({ id: {{question.index}} })">
 									{{ question.title }}
 								</div>
 							</div>
@@ -78,7 +78,7 @@
 					<div class="col-md-3 hidden-sm hidden-xs"></div>
 				</div>
 				<div class="row display-flex">
-					<div class="col-md-9 col-sm-5 col-xs-5 comment-section">
+					<div class="col-md-9 col-sm-5 col-xs-6 comment-section">
 						<div class="row display-flex">
 							<div class="col-md-2 col-sm-4 hidden-xs question-column">
 								<hr class="line">
@@ -109,7 +109,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-3 col-sm-7 col-xs-7 question-info">
+					<div class="col-md-3 col-sm-7 col-xs-6 question-info">
 						<div>1 <span>related discussion</span></div>
 						<div>6 <span>peers involved</span></div>
 						<div>3 <span>conversations</span></div>
@@ -124,7 +124,7 @@
 			<div id="load-more" class="col-md-offset-2 col-md-8">
 				<span ng-click="loadMore()">
 					load more questions
-					<span> ({{ remaining }} more)</span>
+					<span ng-hide="searchResult"> ({{ remaining }} more)</span>
 				</span>
 			</div>
 			<div class="col-md-2"></div>

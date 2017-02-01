@@ -530,7 +530,7 @@ Main structure
         padding-bottom: 15px; } }
 
 /*
- Main structure
+Main structure
  */
 #user-profile {
   font-size: 12px; }
@@ -540,8 +540,10 @@ Main structure
       color: #a7a9ac;
       text-transform: uppercase;
       font-size: 10px; }
-    #user-profile .modal-content .modal-header .close {
-      align-self: flex-end; }
+    #user-profile .modal-content .modal-header .modal-button {
+      text-align: right; }
+      #user-profile .modal-content .modal-header .modal-button .close {
+        float: none; }
     #user-profile .modal-content .modal-header .modal-title {
       color: #0266b3;
       padding-top: 10px;
@@ -669,7 +671,8 @@ Main structure
         color: #0266b3; }
       #user-profile .modal-content .modal-footer .hot-title {
         font-size: 14px;
-        padding-bottom: 30px; }
+        margin-bottom: 30px;
+        cursor: pointer; }
       @media screen and (max-width: 767px) {
         #user-profile .modal-content .modal-footer .hot-info {
           display: -webkit-box;

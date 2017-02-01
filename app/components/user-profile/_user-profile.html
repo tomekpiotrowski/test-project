@@ -4,12 +4,12 @@
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-					<div>
-						<img ng-src="{{ user.picture }}">
+					<div class="modal-button">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
 					</div>
+					<img ng-src="{{ user.picture }}" class="modal-picture">
 					<h4 class="modal-title" id="myModalLabel">{{ user.name }}</h4>
 					<div class="row profile-info">
 						<div class="col-md-4 col-sm-4">
@@ -94,13 +94,16 @@
 				</div>
 				<div class="modal-footer">
 					<div class="hot-picture">
-						<img src="app/assets/img/profile-pictures/profile_pic6.png">
+						<img src="{{ hottestDiscussion.user.picture }}">
 					</div>
 					<div>
-						<span class="blue-text">Andrew</span>
+						<span class="blue-text">{{ hottestDiscussion.user.name }}</span>
 						<span class="grey-text">found the guardian article</span>
 					</div>
-					<div class="blue-text hot-title">Vegan diet to stop diabetes progress</div>
+					<div class="blue-text hot-title" ui-sref="question({id: hottestDiscussion.index})"
+						data-dismiss="modal">
+						{{ hottestDiscussion.title }}
+					</div>
 					<div class="row hot-info">
 						<div class="col-md-3 col-sm-3 col-xs-6 info-1">
 							<span class="num">6&nbsp;&nbsp;</span>
@@ -115,7 +118,7 @@
 							<span class="text-italic">conversations</span>
 						</div>
 						<div class="col-md-3 col-sm-3 col-xs-6 info-4">
-							<span class="num">19&nbsp;&nbsp;</span>
+							<span class="num">{{ hottestDiscussion.upvotes }}&nbsp;&nbsp;</span>
 							<span class="text-italic">upvotes</span>
 						</div>
 					</div>

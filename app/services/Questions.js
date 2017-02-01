@@ -97,6 +97,20 @@ angular.module('app')
 						content: "When your blood sugar is low, your body gives out signs " +
 						"that you need food. Different people have different symptoms. You " +
 						"will learn to know your symptoms."
+					},
+					{
+						user: Users[6],
+						upvotes: 0,
+						votesValue: "upvotes",
+						content: "You should check your feet daily for redness, " +
+						"caluses, cracks or skin breakdown."
+					},
+					{
+						user: Users[6],
+						upvotes: 0,
+						votesValue: "upvotes",
+						content: "You should check your feet daily for redness, " +
+						"caluses, cracks or skin breakdown."
 					}
 				]
 			},
