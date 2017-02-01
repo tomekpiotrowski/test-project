@@ -207,7 +207,7 @@ angular.module('app')
 				"mollit anim id est laborum.",
 				upvotes: 0,
 				votesValue: "upvotes",
-				followed: true,
+				followed: false,
 				comments: [
 					{
 						user: Users[1],
@@ -268,35 +268,6 @@ angular.module('app')
 						votesValue: "upvotes",
 						content: "Numbers or tingling in your feet should be " +
 						"reported to your doctor at your regular visits."
-					},
-					{
-						user: Users[3],
-						upvotes: 0,
-						votesValue: "upvotes",
-						content: "Numbers or tingling in your feet should be " +
-						"reported to your doctor at your regular visits."
-					},
-					{
-						user: Users[4],
-						upvotes: 0,
-						votesValue: "upvotes",
-						content: "Numbers or tingling in your feet should be " +
-						"reported to your doctor at your regular visits."
-					},
-					{
-						user: Users[6],
-						upvotes: 0,
-						votesValue: "upvotes",
-						content: "You should check your feet daily for redness, " +
-						"caluses, cracks or skin breakdown."
-					},
-					{
-						user: Users[2],
-						upvotes: 0,
-						votesValue: "upvotes",
-						content: "When your blood sugar is low, your body gives out signs " +
-						"that you need food. Different people have different symptoms. You " +
-						"will learn to know your symptoms."
 					}
 				]
 			},
@@ -328,28 +299,6 @@ angular.module('app')
 						votesValue: "upvotes",
 						content: "Numbers or tingling in your feet should be " +
 						"reported to your doctor at your regular visits."
-					},
-					{
-						user: Users[4],
-						upvotes: 0,
-						votesValue: "upvotes",
-						content: "Numbers or tingling in your feet should be " +
-						"reported to your doctor at your regular visits."
-					},
-					{
-						user: Users[6],
-						upvotes: 0,
-						votesValue: "upvotes",
-						content: "You should check your feet daily for redness, " +
-						"caluses, cracks or skin breakdown."
-					},
-					{
-						user: Users[2],
-						upvotes: 0,
-						votesValue: "upvotes",
-						content: "When your blood sugar is low, your body gives out signs " +
-						"that you need food. Different people have different symptoms. You " +
-						"will learn to know your symptoms."
 					}
 				]
 			},
@@ -366,7 +315,7 @@ angular.module('app')
 				"mollit anim id est laborum.",
 				upvotes: 0,
 				votesValue: "upvotes",
-				followed: false,
+				followed: true,
 				comments: [
 					{
 						user: Users[1],
@@ -395,14 +344,6 @@ angular.module('app')
 						votesValue: "upvotes",
 						content: "You should check your feet daily for redness, " +
 						"caluses, cracks or skin breakdown."
-					},
-					{
-						user: Users[2],
-						upvotes: 0,
-						votesValue: "upvotes",
-						content: "When your blood sugar is low, your body gives out signs " +
-						"that you need food. Different people have different symptoms. You " +
-						"will learn to know your symptoms."
 					}
 				]
 			},
@@ -441,21 +382,6 @@ angular.module('app')
 						votesValue: "upvotes",
 						content: "Numbers or tingling in your feet should be " +
 						"reported to your doctor at your regular visits."
-					},
-					{
-						user: Users[6],
-						upvotes: 0,
-						votesValue: "upvotes",
-						content: "You should check your feet daily for redness, " +
-						"caluses, cracks or skin breakdown."
-					},
-					{
-						user: Users[2],
-						upvotes: 0,
-						votesValue: "upvotes",
-						content: "When your blood sugar is low, your body gives out signs " +
-						"that you need food. Different people have different symptoms. You " +
-						"will learn to know your symptoms."
 					}
 				]
 			}

@@ -61,7 +61,7 @@
 						<div class="upvotes">
 							<span>{{ question.upvotes | positive }}&nbsp;</span>
 							<span class="upvote-text">
-								{{ question.votesValue = question.upvotes >= 0 ? "upvote" : "downvote" }}
+								{{ question.votesValue = question.upvotes >= 0 ? "upvotes" : "downvotes" }}
 							</span>
 							<span class="upvote-arrows">
 								<a ng-click="question.upvotes = upvote(question.upvotes)"
@@ -123,7 +123,7 @@
 							<div class="upvotes">
 								<span>{{ comment.upvotes | positive }}&nbsp;</span>
 								<span class="upvote-text">
-									{{ comment.votesValue = comment.upvotes >= 0 ? "upvote" : "downvote" }}
+									{{ comment.votesValue = comment.upvotes >= 0 ? "upvotes" : "downvotes" }}
 								</span>
 								<span class="upvote-arrows">
 									<a ng-click="comment.upvotes = upvote(comment.upvotes)"
@@ -183,7 +183,7 @@
 										<div class="upvotes">
 											<span>{{ subcomment.upvotes | positive }}&nbsp;</span>
 											<span class="upvote-text">
-												{{ subcomment.votesValue = subcomment.upvotes >= 0 ? "upvote" : "downvote" }}
+												{{ subcomment.votesValue = subcomment.upvotes >= 0 ? "upvotes" : "downvotes" }}
 											</span>
 											<span class="upvote-arrows">
 												<a ng-click="subcomment.upvotes = upvote(subcomment.upvotes)"

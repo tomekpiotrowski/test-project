@@ -4,6 +4,16 @@ angular.module('app')
 
 			$scope.questions = Questions;
 
+			$scope.$watch('questions', function(newValue) {
+				$scope.myQuestions = [];
+
+				for (var i in newValue) {
+					if (newValue[i].followed) {
+						$scope.myQuestions.push(newValue[i]);
+					}
+				}
+			});
+
 			angular.element($window).bind('resize', function() {
 				$scope.$apply(function() {
 					$scope.documentWidth = $window.innerWidth;
@@ -41,31 +51,39 @@ angular.module('app')
 			};
 
 			$scope.radioForm = { value: "all_questions" };
+
 			$scope.$watch('radioForm.value', function(newValue) {
+				var questionsNum;
+
 				if (newValue === "my_shelf") {
 					$scope.followed = true;
 
-					$scope.questionsLimit = "";
+					questionsNum = $scope.myQuestions.length;
+					$scope.questionsLimit = 3;
+
+					if (questionsNum - 3 <= 0) {
+						$scope.remaining = 0;
+					} else {
+						$scope.remaining = questionsNum - 3;
+					}
 				} else {
 					$scope.followed = "";
 
-					$scope.questionsNum = $scope.questions.length;
+					questionsNum = $scope.questions.length;
 					$scope.questionsLimit = 3;
-					if ($scope.questionsNum - 3 <= 0) {
+
+					if (questionsNum - 3 <= 0) {
 						$scope.remaining = 0;
 					} else {
-						$scope.remaining = $scope.questionsNum - 3;
+						$scope.remaining = questionsNum - 3;
 					}
 				}
 			});
 
-			if ($scope.radioForm.value === "my_shelf") {
-				$scope.questionsLimit = "";
-			}
-
 			$scope.loadMore = function() {
-				$scope.questionsLimit+=3;
-				if ($scope.remaining <= 0) {
+				$scope.questionsLimit += 3;
+
+				if ($scope.remaining - 3 <= 0) {
 					$scope.remaining = 0;
 				} else {
 					$scope.remaining -= 3;
